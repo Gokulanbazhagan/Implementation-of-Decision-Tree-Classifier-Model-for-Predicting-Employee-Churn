@@ -61,13 +61,21 @@ plt.show()
 ```
 
 ## Output:
+
 1.Head:
+
 ![image](https://github.com/Gokulanbazhagan/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/119518996/dc694c2a-2d85-4110-b31c-70ecb924a930)
+
 2.Mean Square error:
+
 ![image](https://github.com/Gokulanbazhagan/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/119518996/b1909abb-e101-4b5f-98ec-82ccfc204ea4)
-3.3. Testing of Model:
+
+3.Testing of Model:
+
 ![image](https://github.com/Gokulanbazhagan/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/119518996/65d82966-1d4d-4aaf-ab2a-2c98b0f40e74)
+
 4.Decision Tree:
+
  ![image](https://github.com/Gokulanbazhagan/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/119518996/e4036864-1a0b-4042-bca7-2f9309fb2dc0)
 
 
