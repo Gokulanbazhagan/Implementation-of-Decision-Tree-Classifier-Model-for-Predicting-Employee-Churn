@@ -1,4 +1,4 @@
-# implement the Decision Tree Classifier Model for Predicting Employee Churn.
+# Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn
 
 ## AIM:
 To write a program to implement the Decision Tree Classifier Model for Predicting Employee Churn.
@@ -8,77 +8,65 @@ To write a program to implement the Decision Tree Classifier Model for Predictin
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1.Import all the packages that helps to implement Decision Tree.
-2.Download and upload required csv file or dataset for predecting Employee Churn.
-3.Initialize variables with required features.
-4.And implement Decision tree classifier to predict Employee Churn.
+1. Import the required libraries.
+2. Upload and read the dataset.
+3. Check for any null values using the isnull() function.
+4. From sklearn.tree import DecisionTreeClassifier and use criterion as entropy.
+5. Find the accuracy of the model and predict the required values by importing the required module from sklearn.
 
 ## Program:
 ```
 /*
 Program to implement the Decision Tree Classifier Model for Predicting Employee Churn.
-Developed by:Gokularamanan k
-RegisterNumber:  212222230049
+Developed by: Hemakesh G
+RegisterNumber:  212223040064
 */
 import pandas as pd
-data=pd.read_csv("Salary.csv")
+data=pd.read_csv("/content/Employee_EX6.csv")
+
 data.head()
 
-data.info
+data.info()
 
 data.isnull().sum()
 
+data["left"].value_counts()
+
 from sklearn.preprocessing import LabelEncoder
 le=LabelEncoder()
-data["Position"]=le.fit_transform(data["Position"])
+
+data["salary"]=le.fit_transform(data["salary"])
 data.head()
 
-x=data[["Position","Level"]]
-y=data[["Salary"]]
+x=data[["satisfaction_level","last_evaluation","number_project","average_montly_hours",
+        "time_spend_company","Work_accident","promotion_last_5years","salary"]]
+x.head()
+
+y=data["left"]
 
 from sklearn.model_selection import train_test_split
-x_train, x_test, y_train, y_test=train_test_split(x,y,test_size=0.2,random_state=2)
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=100)
 
-from sklearn.tree import DecisionTreeRegressor, plot_tree
-dt=DecisionTreeRegressor()
+from sklearn.tree import DecisionTreeClassifier
+dt= DecisionTreeClassifier(criterion="entropy")
 dt.fit(x_train,y_train)
 y_pred=dt.predict(x_test)
 
 from sklearn import metrics
-mse=metrics.mean_squared_error(y_test, y_pred)
-mse
+accuracy=metrics.accuracy_score(y_test,y_pred)
+accuracy
 
-r2=metrics.r2_score(y_test,y_pred)
-r2
-
-dt.predict([[5,6]])
-
-import matplotlib.pyplot as plt
-plt.figure(figsize=(12,6))
-plot_tree(dt,feature_names=x.columns,class_names=['Salary'], filled=True)
-plt.show()
-
+dt.predict([[0.5,0.8,9,260,6,0,1,2]])
 ```
 
 ## Output:
 
-1.Head:
-
-![image](https://github.com/Gokulanbazhagan/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/119518996/dc694c2a-2d85-4110-b31c-70ecb924a930)
-
-2.Mean Square error:
-
-![image](https://github.com/Gokulanbazhagan/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/119518996/b1909abb-e101-4b5f-98ec-82ccfc204ea4)
-
-3.Testing of Model:
-
-![image](https://github.com/Gokulanbazhagan/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/119518996/65d82966-1d4d-4aaf-ab2a-2c98b0f40e74)
-
-4.Decision Tree:
-
- ![image](https://github.com/Gokulanbazhagan/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/119518996/e4036864-1a0b-4042-bca7-2f9309fb2dc0)
-
-
+## 1.Head:
+![Screenshot 2024-04-02 162411](https://github.com/HEMAKESHG/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/144870552/618a62bc-9c2c-4395-8bfe-7c4770ae8b08)
+## 2.Accuracy:
+![Screenshot 2024-04-02 162318](https://github.com/HEMAKESHG/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/144870552/62cccf9f-ba03-4aa9-b75d-bac1641e0711)
+## 3. Predict:
+![Screenshot 2024-04-02 162347](https://github.com/HEMAKESHG/Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn/assets/144870552/e1946cfd-ef32-4233-ad0f-e4ccd6b5ee8e)
 
 
 ## Result:
