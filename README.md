@@ -1,4 +1,4 @@
-# Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn
+# implement the Decision Tree Classifier Model for Predicting Employee Churn.
 
 ## AIM:
 To write a program to implement the Decision Tree Classifier Model for Predicting Employee Churn.
@@ -16,7 +16,7 @@ To write a program to implement the Decision Tree Classifier Model for Predictin
 ## Program:
 ```
 /*
-Program to implement the Decision Tree Regressor Model for Predicting the Salary of the Employee.
+Program to implement the Decision Tree Classifier Model for Predicting Employee Churn.
 Developed by:Gokularamanan k
 RegisterNumber:  212222230049
 */
